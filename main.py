@@ -4,22 +4,16 @@ import requests
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 from urllib.error import HTTPError, URLError
+from PIL import Image, ImageDraw, ImageFont  # Importa PIL per la gestione delle immagini
+from waveshare_epd import epd2in13_V3  # Importa il driver per il display Waveshare V3
 
 from config.builder import Builder
 from config.config import config
 from logs import logger
 from presentation.observer import Observable
-from PIL import Image, ImageDraw, ImageFont
-from waveshare_epd import epd2in13_V3  # **MODIFICA: Importa il driver per il modello V3 del display**
 
-# Costanti per la gestione dei dati e delle date
 DATA_SLICE_DAYS = 1
 DATETIME_FORMAT = "%Y-%m-%dT%H:%M"
-
-# **MODIFICA: Inizializzazione del display per il modello V3**
-epd = epd2in13_V3.EPD()  # **MODIFICA: Inizializzazione del driver display per il modello V3**
-epd.init()  # **MODIFICA: Inizializzazione del display V3**
-epd.Clear(0xFF)  # **MODIFICA: Pulisce il display con il colore bianco**
 
 # Funzione per ottenere dati di esempio (dummy)
 def get_dummy_data():
@@ -39,27 +33,27 @@ def fetch_prices():
     prices = [entry[1:5] for entry in external_data[::-1]]
     return prices
 
-# **MODIFICA: Funzione per aggiornare e mostrare i dati sul display**
+# Funzione per migliorare la visibilità del display
 def update_display(prices):
     logger.info('Updating display')
     
-    # **MODIFICA: Crea un'immagine di dimensioni appropriate per il display**
+    # Crea un'immagine di dimensioni appropriate per il display
     image = Image.new('1', (epd.width, epd.height), 255)  # Bianco come sfondo
     draw = ImageDraw.Draw(image)
     
-    # **MODIFICA: Imposta un font più leggibile (grassetto e dimensione maggiore)**
-    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 20)  # **Font grassetto e dimensione 20**
+    # Imposta un font più leggibile (grassetto e dimensione maggiore)
+    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 20)  # Font grassetto e dimensione 20
     
     # Scrivi i prezzi sullo schermo
     y_position = 10  # Posizione verticale iniziale
     for price in prices:
         text = f"BTC: {price[0]} USD"
-        draw.text((10, y_position), text, font=font, fill=0)
+        draw.text((10, y_position), text, font=font, fill=0)  # Usa il font grassetto
         y_position += 30  # Spazio tra le righe
-        
-    # **MODIFICA: Carica l'immagine nel display**
+    
+    # Mostra l'immagine sul display
     epd.display(epd.getbuffer(image))
-    epd.sleep()
+    epd.sleep()  # Mette il display in modalità sleep per ridurre il consumo energetico
 
 # Funzione principale
 def main():
@@ -69,26 +63,21 @@ def main():
     builder = Builder(config)
     builder.bind(data_sink)
 
-    counter = 0  # Contatore per il refresh completo ogni X aggiornamenti
-
+    # **Inizializza il display Waveshare 2.13 V3**
+    epd = epd2in13_V3.EPD()  # Inizializzazione del display per il modello V3
+    epd.init()  # Inizializza il display
+    epd.Clear(0xFF)  # Pulisce il display (colore bianco)
+    
     try:
         while True:
             try:
-                # Ottieni i dati
                 prices = [entry[1:] for entry in get_dummy_data()] if config.dummy_data else fetch_prices()
-
-                # **MODIFICA: Aggiorna il display con i nuovi dati**
-                update_display(prices)
+                data_sink.update_observers(prices)
                 
-                # Incrementa il contatore
-                counter += 1
+                # Aggiorna il display con i nuovi prezzi
+                update_display(prices)
 
-                # **MODIFICA: Ogni 5 aggiornamenti forziamo un refresh completo**
-                if counter % 5 == 0:
-                    epd.Clear(0xFF)  # Pulisce il display
-
-                # Tempo di attesa prima del prossimo aggiornamento (in secondi)
-                time.sleep(config.refresh_interval * 60)
+                time.sleep(config.refresh_interval * 60)  # Intervallo di aggiornamento in minuti
 
             except (HTTPError, URLError) as e:
                 logger.error(str(e))
@@ -102,7 +91,7 @@ def main():
     except KeyboardInterrupt:
         logger.info('Exit')
         data_sink.close()
-        epd.sleep()  # **MODIFICA: Rilascia risorse del display**
+        epd.sleep()  # Mette il display in modalità sleep prima di uscire
         exit()
 
 if __name__ == "__main__":
