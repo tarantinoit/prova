@@ -41,15 +41,20 @@ def update_display(prices):
     image = Image.new('1', (epd.width, epd.height), 255)  # Bianco come sfondo
     draw = ImageDraw.Draw(image)
     
-    # Imposta un font più leggibile (grassetto e dimensione maggiore)
-    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 20)  # Font grassetto e dimensione 20
+    # Imposta un font leggibile
+    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)  # Font più piccolo per visibilità
+    
+    # Pulisci il display per evitare sovrapposizioni
+    epd.Clear(0xFF)
     
     # Scrivi i prezzi sullo schermo
     y_position = 10  # Posizione verticale iniziale
     for price in prices:
         text = f"BTC: {price[0]} USD"
         draw.text((10, y_position), text, font=font, fill=0)  # Usa il font grassetto
-        y_position += 30  # Spazio tra le righe
+        y_position += 20  # Spazio tra le righe (ridotto per adattarsi meglio)
+        if y_position > epd.height - 20:  # Aggiungi limite per evitare che il testo vada fuori schermo
+            break
     
     # Mostra l'immagine sul display
     epd.display(epd.getbuffer(image))
