@@ -4,9 +4,8 @@ import requests
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 from urllib.error import HTTPError, URLError
-from PIL import Image, ImageDraw, ImageFont  # Importa PIL per la gestione delle immagini
-from waveshare_epd import epd2in13_V3  # Importa il driver per il display Waveshare V3
-
+from PIL import Image, ImageDraw, ImageFont
+from waveshare_epd import epd2in13_V3
 from config.builder import Builder
 from config.config import config
 from logs import logger
@@ -15,7 +14,7 @@ from presentation.observer import Observable
 DATA_SLICE_DAYS = 1
 DATETIME_FORMAT = "%Y-%m-%dT%H:%M"
 
-# Funzione per ottenere dati di esempio (dummy)
+# Funzione per ottenere i dati di esempio (dummy)
 def get_dummy_data():
     return []  # Aggiungi dati fittizi se necessario
 
@@ -33,8 +32,31 @@ def fetch_prices():
     prices = [entry[1:5] for entry in external_data[::-1]]
     return prices
 
+# Funzione per ottenere i dati meteo da Serra Riccò
+def get_weather():
+    api_key = "c4f0f5faa1ec05bba4b975552a571784"
+    city_id = "3166656"  # Serra Riccò's city ID
+    url = f"http://api.openweathermap.org/data/2.5/weather?id={city_id}&appid={api_key}&units=metric"
+
+    try:
+        response = requests.get(url)
+        data = response.json()
+        if response.status_code == 200:
+            weather_data = {
+                "temperature": data["main"]["temp"],
+                "humidity": data["main"]["humidity"],
+                "weather": data["weather"][0]["description"]
+            }
+            return weather_data
+        else:
+            logger.error(f"Error fetching weather data: {data.get('message', 'Unknown error')}")
+            return None
+    except Exception as e:
+        logger.error(f"Exception occurred while fetching weather data: {e}")
+        return None
+
 # Funzione per migliorare la visibilità del display
-def update_display(prices, epd):
+def update_display(prices=None, weather_data=None):
     logger.info('Updating display')
     
     # Crea un'immagine di dimensioni appropriate per il display
@@ -47,15 +69,29 @@ def update_display(prices, epd):
     # Pulisci il display per evitare sovrapposizioni
     epd.Clear(0xFF)
     
-    # Scrivi i prezzi sullo schermo
-    y_position = 10  # Posizione verticale iniziale
-    for price in prices:
-        text = f"BTC: {price[0]} USD"
-        draw.text((10, y_position), text, font=font, fill=0)  # Usa il font grassetto
-        y_position += 20  # Spazio tra le righe (ridotto per adattarsi meglio)
-        if y_position > epd.height - 20:  # Aggiungi limite per evitare che il testo vada fuori schermo
-            break
+    # Se i dati dei prezzi sono presenti, visualizzali
+    if prices:
+        y_position = 10
+        for price in prices:
+            text = f"BTC: {price[0]} USD"
+            draw.text((10, y_position), text, font=font, fill=0)
+            y_position += 20
+            if y_position > epd.height - 20:
+                break
     
+    # Se i dati meteo sono presenti, visualizzali
+    if weather_data:
+        text = f"Temp: {weather_data['temperature']}°C"
+        draw.text((10, y_position), text, font=font, fill=0)
+        y_position += 20
+        
+        text = f"Humidity: {weather_data['humidity']}%"
+        draw.text((10, y_position), text, font=font, fill=0)
+        y_position += 20
+        
+        text = f"Weather: {weather_data['weather']}"
+        draw.text((10, y_position), text, font=font, fill=0)
+
     # Mostra l'immagine sul display
     epd.display(epd.getbuffer(image))
     epd.sleep()  # Mette il display in modalità sleep per ridurre il consumo energetico
@@ -69,20 +105,23 @@ def main():
     builder.bind(data_sink)
 
     # **Inizializza il display Waveshare 2.13 V3**
-    epd = epd2in13_V3.EPD()  # Inizializzazione del display per il modello V3
-    epd.init()  # Inizializza il display
-    epd.Clear(0xFF)  # Pulisce il display (colore bianco)
+    epd = epd2in13_V3.EPD()  
+    epd.init()  
+    epd.Clear(0xFF)  
     
     try:
         while True:
             try:
-                prices = [entry[1:] for entry in get_dummy_data()] if config.dummy_data else fetch_prices()
-                data_sink.update_observers(prices)
+                if time.time() % 120 < 60:  # Prima metà del ciclo: mostriamo i prezzi delle criptovalute
+                    prices = [entry[1:] for entry in get_dummy_data()] if config.dummy_data else fetch_prices()
+                    data_sink.update_observers(prices)
+                    update_display(prices=prices)
+                else:  # Seconda metà del ciclo: mostriamo i dati meteo
+                    weather_data = get_weather()
+                    if weather_data:
+                        update_display(weather_data=weather_data)
                 
-                # Aggiorna il display con i nuovi prezzi
-                update_display(prices, epd)
-
-                time.sleep(config.refresh_interval * 60)  # Intervallo di aggiornamento in minuti
+                time.sleep(60)  # 60 secondi per alternare
 
             except (HTTPError, URLError) as e:
                 logger.error(str(e))
@@ -96,7 +135,7 @@ def main():
     except KeyboardInterrupt:
         logger.info('Exit')
         data_sink.close()
-        epd.sleep()  # Mette il display in modalità sleep prima di uscire
+        epd.sleep()  
         exit()
 
 if __name__ == "__main__":
