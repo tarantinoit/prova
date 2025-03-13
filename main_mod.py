@@ -34,7 +34,7 @@ def fetch_prices():
     return prices
 
 # Funzione per migliorare la visibilità del display
-def update_display(epd, prices):
+def update_display(prices, epd):
     logger.info('Updating display')
     
     # Crea un'immagine di dimensioni appropriate per il display
@@ -79,11 +79,8 @@ def main():
                 prices = [entry[1:] for entry in get_dummy_data()] if config.dummy_data else fetch_prices()
                 data_sink.update_observers(prices)
                 
-                # Prima di aggiornare il display, assicurati che il display sia pulito
-                epd.Clear(0xFF)  # Pulisce il display prima di ogni aggiornamento
-                
                 # Aggiorna il display con i nuovi prezzi
-                update_display(epd, prices)
+                update_display(prices, epd)
 
                 time.sleep(config.refresh_interval * 60)  # Intervallo di aggiornamento in minuti
 
