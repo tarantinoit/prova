@@ -4,8 +4,8 @@ import requests
 import urllib.parse
 from datetime import datetime, timezone, timedelta
 from urllib.error import HTTPError, URLError
-from PIL import Image, ImageDraw, ImageFont  # Importa PIL per la gestione delle immagini
-from waveshare_epd import epd2in13_V3  # Importa il driver per il display Waveshare V3
+from PIL import Image, ImageDraw, ImageFont
+from waveshare_epd import epd2in13_V3
 
 from config.builder import Builder
 from config.config import config
@@ -42,19 +42,23 @@ def update_display(epd, prices):
     draw = ImageDraw.Draw(image)
     
     # Imposta un font leggibile
-    font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 16)  # Font più piccolo per visibilità
+    try:
+        font = ImageFont.truetype('/usr/share/fonts/truetype/dejavu/DejaVuSans-Bold.ttf', 12)  # Font piccolo
+    except IOError:
+        font = ImageFont.load_default()  # Usa font di default se non disponibile
     
-    # Pulisci il display per evitare sovrapposizioni
+    # Pulisce il display per evitare sovrapposizioni
     epd.Clear(0xFF)
     
     # Scrivi i prezzi sullo schermo
     y_position = 10  # Posizione verticale iniziale
     for price in prices:
-        text = f"BTC: {price[0]} USD"
-        draw.text((10, y_position), text, font=font, fill=0)  # Usa il font grassetto
-        y_position += 20  # Spazio tra le righe (ridotto per adattarsi meglio)
-        if y_position > epd.height - 20:  # Aggiungi limite per evitare che il testo vada fuori schermo
-            break
+        if len(price) > 0:  # Verifica se c'è almeno un prezzo
+            text = f"BTC: {price[0]} USD"  # Formatta il prezzo come stringa
+            draw.text((10, y_position), text, font=font, fill=0)  # Usa il font grassetto
+            y_position += 20  # Spazio tra le righe (ridotto per adattarsi meglio)
+            if y_position > epd.height - 20:  # Limita la quantità di righe sul display
+                break
     
     # Mostra l'immagine sul display
     epd.display(epd.getbuffer(image))
