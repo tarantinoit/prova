@@ -1,0 +1,762 @@
+[*] Inizio scansione 8080...
+
+==============================
+[+] Analizzo 192.168.51.7:8080
+------------------------------
+
+🔍 Testing 192.168.51.7/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+
+
+
+🔍 Testing 192.168.51.7/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.7/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.11:8080
+------------------------------
+
+🔍 Testing 192.168.51.11/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+
+
+
+🔍 Testing 192.168.51.11/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.11/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.15:8080
+------------------------------
+
+🔍 Testing 192.168.51.15/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+
+
+
+🔍 Testing 192.168.51.15/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:03 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.15/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.23:8080
+------------------------------
+
+🔍 Testing 192.168.51.23/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+
+
+
+🔍 Testing 192.168.51.23/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.23/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.44:8080
+------------------------------
+
+🔍 Testing 192.168.51.44/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+
+
+
+🔍 Testing 192.168.51.44/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.44/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.45:8080
+------------------------------
+
+🔍 Testing 192.168.51.45/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+
+
+
+🔍 Testing 192.168.51.45/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.45/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+==============================
+[+] Analizzo 192.168.51.47:8080
+------------------------------
+
+🔍 Testing 192.168.51.47/
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/console
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/login
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/admin
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/jenkins
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/dashboard
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/ui
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/api
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+🔍 Testing 192.168.51.47/metrics
+HTTP/1.1 404 Not Found
+Content-Type: text/plain; charset=utf-8
+X-Content-Type-Options: nosniff
+Date: Tue, 20 May 2025 10:15:04 GMT
+Content-Length: 19
+
+404 page not found
+
+
+
+==============================
+[+] Analizzo 192.168.51.54:8080
+------------------------------
+
+🔍 Testing 192.168.51.54/
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/console
+HTTP/1.1 302 Found
+Connection: keep-alive
+Location: /noredirect.html
+Content-Length: 0
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+
+
+
+🔍 Testing 192.168.51.54/login
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/admin
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/jenkins
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/dashboard
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/ui
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/api
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
+
+🔍 Testing 192.168.51.54/metrics
+HTTP/1.1 404 Not Found
+Connection: keep-alive
+Content-Length: 74
+Content-Type: text/html
+Date: Tue, 20 May 2025 10:15:04 GMT
+
+<html><head><title>Error</title></head><body>404 - Not Found</body></html>
+
